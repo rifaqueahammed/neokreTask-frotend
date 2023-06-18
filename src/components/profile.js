@@ -125,7 +125,7 @@ function Profile() {
               </div>
               <div className="w-1/2">
                 <p>What is your school name?</p>
-                <span>{user.security_question}</span>
+                <span>{user.securityQuestion}</span>
               </div>
             </div>
           </div>
