@@ -2,12 +2,12 @@ const validateForm = (formValues) => {
   const errors = {};
 
   // Full Name validation
-  if (!formValues.full_name.trim()) {
-    errors.full_name = "Full Name is required";
-  } else if (!/^[A-Za-z ]+$/.test(formValues.full_name)) {
-    errors.full_name = "Full Name should contain alphabetic characters only";
-  } else if (formValues.full_name.length > 50) {
-    errors.full_name = "Full Name should not exceed 50 characters";
+  if (!formValues.fullName.trim()) {
+    errors.fullName = "Full Name is required";
+  } else if (!/^[A-Za-z ]+$/.test(formValues.fullName)) {
+    errors.fullName = "Full Name should contain alphabetic characters only";
+  } else if (formValues.fullName.length > 50) {
+    errors.fullName = "Full Name should not exceed 50 characters";
   }
 
   // Email validation
@@ -29,8 +29,8 @@ const validateForm = (formValues) => {
   }
 
   // Confirm Password validation
-  if (formValues.confirm_password !== formValues.password) {
-    errors.confirm_password = "Passwords do not match";
+  if (formValues.confirmPassword !== formValues.password) {
+    errors.confirmPassword = "Passwords do not match";
   }
 
   // Date of Birth validation
@@ -44,10 +44,10 @@ const validateForm = (formValues) => {
   }
 
   // Phone Number validation
-  if (!formValues.phone_number.trim()) {
-    errors.phone_number = "Phone Number is required";
-  } else if (!/^\d{10}$/.test(formValues.phone_number)) {
-    errors.phone_number = "Phone Number should be a 10-digit number";
+  if (!formValues.phoneNumber.trim()) {
+    errors.phoneNumber = "Phone Number is required";
+  } else if (!/^\d{10}$/.test(formValues.phoneNumber)) {
+    errors.phoneNumber = "Phone Number should be a 10-digit number";
   }
 
   // Address validation
@@ -72,10 +72,10 @@ const validateForm = (formValues) => {
   }
 
   // Zip Code validation
-  if (!formValues.zip_code.trim()) {
-    errors.zip_code = "ZIP Code is required";
-  } else if (!/^\d{6}$/.test(formValues.zip_code)) {
-    errors.zip_code = "ZIP Code must be a 6-digit number";
+  if (!formValues.zipCode.trim()) {
+    errors.zipCode = "ZIP Code is required";
+  } else if (!/^\d{6}$/.test(formValues.zipCode)) {
+    errors.zipCode = "ZIP Code must be a 6-digit number";
   }
 
   // Country validation
@@ -84,10 +84,10 @@ const validateForm = (formValues) => {
   }
 
   // Security Question validation
-  if (!formValues.security_question.trim()) {
-    errors.security_question = "Security Question is required";
-  } else if (formValues.security_question.length > 100) {
-    errors.address = "Security Question should not exceed 100 characters";
+  if (!formValues.securityQuestion.trim()) {
+    errors.securityQuestion = "Security Question is required";
+  } else if (formValues.securityQuestion.length > 100) {
+    errors.securityQuestion = "Security Question should not exceed 100 characters";
   }
 
   return errors;

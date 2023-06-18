@@ -8,21 +8,22 @@ function Signup() {
   const navigate = useNavigate();
 
   const initialValues = {
-    full_name: "",
+    fullName: "",
     DOB: "",
-    phone_number: "",
+    phoneNumber: "",
     email: "",
     password: "",
-    confirm_password: "",
-    security_question: "",
+    confirmPassword: "",
+    securityQuestion: "",
     address: "",
     city: "",
     state: "",
-    zip_code: "",
+    zipCode: "",
     country: "",
   };
   const [formValues, setformValues] = useState(initialValues);
   const [error, setErrors] = useState({});
+  const [err,setErr] = useState('');
 
   const handleChange = (e) => {
     setformValues({
@@ -41,6 +42,9 @@ function Signup() {
          userSignUp({formValues}).then((response)=>{
             if(response.data.success){
               navigate('/login');
+            }
+            else{
+              setErr(response.data.error);
             }
           })
       }
@@ -64,6 +68,11 @@ function Signup() {
           </h1>
           <h1 className="font-bold text-3xl leading-10">Sign Up</h1>
         </div>
+        {err && (
+          <div className="text-center">
+            <h1 className="error text-red-500 mt-5 text center">{err}</h1>
+          </div>
+        )}
         <div className="grid grid-cols-2 mt-2">
           <div className="flex flex-col gap-1 w-full">
             <div className="flex justify-between">
@@ -75,12 +84,12 @@ function Signup() {
               type="text"
               className="p-1 w-2/3 font-medium border-solid border border-[#E2E7F0] rounded-md placeholder:opacity-60"
               placeholder="Jhone Deo"
-              value={formValues.full_name}
+              value={formValues.fullName}
               onChange={handleChange}
-              name="full_name"
+              name="fullName"
             />
-            {error.full_name && (
-                  <p className="text-red-500">{error.full_name}</p>
+            {error.fullName && (
+                  <p className="text-red-500">{error.fullName}</p>
                 )}
           </div>
           <div className="flex flex-col gap-1 w-full">
@@ -147,12 +156,12 @@ function Signup() {
               type="tel"
               className="p-1 w-2/3 font-medium border-solid border border-[#E2E7F0] rounded-md placeholder:opacity-60"
               placeholder="9562373406"
-              value={formValues.phone_number}
+              value={formValues.phoneNumber}
               onChange={handleChange}
-              name="phone_number"
+              name="phoneNumber"
             />
-            {error.phone_number && (
-                  <p className="text-red-500">{error.phone_number}</p>
+            {error.phoneNumber && (
+                  <p className="text-red-500">{error.phoneNumber}</p>
                 )}
           </div>
           <div className="flex flex-col gap-1 w-full">
@@ -165,12 +174,12 @@ function Signup() {
               type="password"
               className="p-1 w-2/3 font-medium border-solid border border-[#E2E7F0] rounded-md placeholder:opacity-60"
               placeholder="********"
-              value={formValues.confirm_password}
+              value={formValues.confirmPassword}
               onChange={handleChange}
-              name="confirm_password"
+              name="confirmPassword"
             />
-            {error.confirm_password && (
-                  <p className="text-red-500">{error.confirm_password}</p>
+            {error.confirmPassword && (
+                  <p className="text-red-500">{error.confirmPassword}</p>
                 )}
           </div>
         </div>
@@ -186,12 +195,12 @@ function Signup() {
               type="text"
               className="p-1 w-1/3 font-medium border-solid border border-[#E2E7F0] rounded-md placeholder:opacity-60"
               placeholder="Little Flower School"
-              value={formValues.security_question}
+              value={formValues.securityQuestion}
               onChange={handleChange}
-              name="security_question"
+              name="securityQuestion"
             />
-            {error.security_question && (
-                  <p className="text-red-500">{error.security_question}</p>
+            {error.securityQuestion && (
+                  <p className="text-red-500">{error.securityQuestion}</p>
                 )}
           </div>
         </div>
@@ -264,12 +273,12 @@ function Signup() {
               type="number"
               className="p-1 w-2/3 font-medium border-solid border border-[#E2E7F0] rounded-md placeholder:opacity-60"
               placeholder="******"
-              value={formValues.zip_code}
+              value={formValues.zipCode}
               onChange={handleChange}
-              name="zip_code"
+              name="zipCode"
             />
-            {error.zip_code && (
-                  <p className="text-red-500">{error.zip_code}</p>
+            {error.zipCode && (
+                  <p className="text-red-500">{error.zipCode}</p>
                 )}
           </div>
           <div className="mr-4 flex flex-col gap-1 w-full">

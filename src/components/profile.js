@@ -107,7 +107,7 @@ function Profile() {
                 <span className="font-bold">ZIP Code</span>
               </div>
               <div className="w-1/2">
-                <span>{user.zip_code}</span>
+                <span>{user.zipCode}</span>
               </div>
             </div>
 
