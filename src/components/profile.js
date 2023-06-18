@@ -44,7 +44,7 @@ function Profile() {
                 <span className="font-bold">Name</span>
               </div>
               <div className="w-1/2">
-                <span>{user.full_name}</span>
+                <span>{user.fullName}</span>
               </div>
             </div>
 
