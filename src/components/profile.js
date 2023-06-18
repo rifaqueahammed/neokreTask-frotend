@@ -62,7 +62,7 @@ function Profile() {
                 <span className="font-bold">DOB</span>
               </div>
               <div className="w-1/2">
-                <span>{user.dob}</span>
+                <span>{user.DOB}</span>
               </div>
             </div>
 
@@ -71,7 +71,7 @@ function Profile() {
                 <span className="font-bold">Phone Number</span>
               </div>
               <div className="w-1/2">
-                <span>+91 {user.phone_number}</span>
+                <span>+91 {user.phoneNumber}</span>
               </div>
             </div>
 
